@@ -118,33 +118,6 @@ public class ResTest {
 
   /**
    * 
-   * Test for the SimpleGETtesttest_ID624343 method.
-   * 
-   */
-  @Test
-  public void testSimpleGETtesttest_ID624343() {
-    MiniClientCoverage c = new MiniClientCoverage(mainPath);
-    c.setConnectorEndpoint(connector.getHttpEndpoint());
-    
-        
-    try {
-      c.setLogin(AnonymousAgentImpl.IDENTIFIER, "");
-      ClientResponse result = c.sendRequest("GET", "/test", """
-""", "text/plain", "*/*", new HashMap<>(), new Object[0]);
-      System.out.println("Result of request with id: 791887: " + result.getResponse().trim());
-    
-      Assert.assertEquals("[27894]", 200, result.getHttpCode());
-
-    } catch (Exception e) {
-      e.printStackTrace();
-      fail("Exception: " + e);
-    }
-    
-
-    
-  }
-  /**
-   * 
    * Test for the CustomTest1_ID561977 method.
    * 
    */
@@ -161,6 +134,47 @@ public class ResTest {
       System.out.println("Result of request with id: 305712: " + result.getResponse().trim());
     
       Assert.assertEquals("[999398]", 200, result.getHttpCode());
+
+    } catch (Exception e) {
+      e.printStackTrace();
+      fail("Exception: " + e);
+    }
+    
+    
+    try {
+      c.setLogin(AnonymousAgentImpl.IDENTIFIER, "");
+      ClientResponse result = c.sendRequest("GET", "/test2", """
+""", "text/plain", "*/*", new HashMap<>(), new Object[0]);
+      System.out.println("Result of request with id: 953806: " + result.getResponse().trim());
+    
+      Assert.assertEquals("[409923]", 404, result.getHttpCode());
+
+    } catch (Exception e) {
+      e.printStackTrace();
+      fail("Exception: " + e);
+    }
+    
+
+    
+  }
+  /**
+   * 
+   * Test for the SimpleGETtesttest_ID624343 method.
+   * 
+   */
+  @Test
+  public void testSimpleGETtesttest_ID624343() {
+    MiniClientCoverage c = new MiniClientCoverage(mainPath);
+    c.setConnectorEndpoint(connector.getHttpEndpoint());
+    
+        
+    try {
+      c.setLogin(AnonymousAgentImpl.IDENTIFIER, "");
+      ClientResponse result = c.sendRequest("GET", "/test", """
+""", "text/plain", "*/*", new HashMap<>(), new Object[0]);
+      System.out.println("Result of request with id: 791887: " + result.getResponse().trim());
+    
+      Assert.assertEquals("[27894]", 200, result.getHttpCode());
 
     } catch (Exception e) {
       e.printStackTrace();
