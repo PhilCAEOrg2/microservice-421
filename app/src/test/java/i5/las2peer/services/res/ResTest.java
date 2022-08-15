@@ -143,6 +143,33 @@ public class ResTest {
 
     
   }
+  /**
+   * 
+   * Test for the CustomTest1_ID561977 method.
+   * 
+   */
+  @Test
+  public void testCustomTest1_ID561977() {
+    MiniClientCoverage c = new MiniClientCoverage(mainPath);
+    c.setConnectorEndpoint(connector.getHttpEndpoint());
+    
+        
+    try {
+      c.setLogin(testAgentAdam.getIdentifier(), testPassAdam);
+      ClientResponse result = c.sendRequest("GET", "/test", """
+""", "text/plain", "*/*", new HashMap<>(), new Object[0]);
+      System.out.println("Result of request with id: 305712: " + result.getResponse().trim());
+    
+      Assert.assertEquals("[999398]", 200, result.getHttpCode());
+
+    } catch (Exception e) {
+      e.printStackTrace();
+      fail("Exception: " + e);
+    }
+    
+
+    
+  }
 
 
 
